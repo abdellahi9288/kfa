@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بنا | جمعية الخير للتكافل الاجتماعي</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <img src="الشعار.jpg" alt="شعار الجمعية" class="logo">
+      <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="about.html">عن الجمعية</a></li>
+        <li><a href="orphans.html">برامج الأيتام</a></li>
+        <li><a href="projects.html">المشاريع الإنشائية</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
+      </ul>
+      <button class="lang-switch" onclick="switchLang()">EN</button>
+    </nav>
+  </header>
+  <main>
+    <section class="contact-section">
+      <h1>اتصل بنا</h1>
+      <p>يسعدنا تواصلكم معنا. يرجى تعبئة النموذج أدناه أو استخدام معلومات الاتصال المتوفرة.</p>
+      <form class="contact-form">
+        <label for="name">الاسم:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">الرسالة:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit">إرسال</button>
+      </form>
+      <div class="contact-info">
+        <h2>معلومات الاتصال</h2>
+        <p>البريد الإلكتروني: info@alkhayr.org</p>
+        <p>الهاتف: +222 123 456 789</p>
+        <p>العنوان: شارع رئيسي، نواكشوط، موريتانيا</p>
+      </div>
+      <div class="map-placeholder" style="margin-top:2rem; background:#eee; height:250px; display:flex; align-items:center; justify-content:center; color:#888;">
+        [خريطة الموقع]
+      </div>
+      <p style="font-size:0.9em; color:#888;">معلومات الاتصال مأخوذة من الموقع الرسمي. المصدر: <a href="https://alkhayrong.net/" target="_blank">alkhayrong.net</a></p>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 جمعية الخير للتكافل الاجتماعي. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html> 
