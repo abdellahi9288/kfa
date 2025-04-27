@@ -303,4 +303,67 @@ footer {
   text-align: center;
   position: relative;
   box-shadow: 0 1px 4px rgba(23,154,19,0.06);
+}
+
+@media (max-width: 600px) {
+  .about-section, .mission-vision, .team, .partners {
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    max-width: 99vw;
+    margin: 1rem auto;
+  }
+  .project-stat-card {
+    min-width: 110px;
+    padding: 0.7rem 0.5rem;
+    font-size: 0.98rem;
+  }
+  .stat-number {
+    font-size: 1.4rem;
+  }
+  .stat-label {
+    font-size: 0.95rem;
+  }
+  .projects-graph-placeholder {
+    max-width: 98vw;
+    height: 110px;
+    font-size: 0.95rem;
+  }
+  .orphans-img-placeholder {
+    max-width: 98vw;
+    height: 100px;
+    font-size: 1rem;
+  }
+  .team ul, .partners ul {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .news-list > div, .projects-list > div {
+    min-width: 90vw;
+    max-width: 99vw;
+    padding: 0.7rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .about-section, .mission-vision, .team, .partners {
+    padding: 0.3rem 0.1rem 0.3rem 0.1rem;
+  }
+  .project-stat-card {
+    min-width: 80px;
+    padding: 0.4rem 0.2rem;
+    font-size: 0.9rem;
+  }
+  .stat-number {
+    font-size: 1.1rem;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+  }
+  .projects-graph-placeholder {
+    height: 70px;
+    font-size: 0.8rem;
+  }
+  .orphans-img-placeholder {
+    height: 60px;
+    font-size: 0.8rem;
+  }
 } 
