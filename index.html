@@ -18,7 +18,9 @@
         <li><a href="projects.html">المشاريع الإنشائية</a></li>
         <li><a href="contact.html">اتصل بنا</a></li>
       </ul>
-      <button class="lang-switch" onclick="switchLang()">EN</button>
+      <div class="nav-buttons">
+        <button class="lang-switch" onclick="switchLang()">EN</button>
+      </div>
     </nav>
   </header>
   <main>
@@ -31,32 +33,8 @@
     </section>
     <section class="news" id="news">
       <h2>آخر الأخبار</h2>
-      <div class="news-list">
-        <div>
-          <h3>توزيع لحوم ذبائح خلال أيام الفطر 2025</h3>
-          <p>قامت الجمعية بالتعاون مع جمعية وقف الأيتام بتوزيع لحوم أبقار على بعض محتاجي العاصمة خلال عيد الفطر 2025.</p>
-          <a href="https://alkhayrong.net/" target="_blank">اقرأ المزيد</a>
-        </div>
-        <div>
-          <h3>توزيع سلال غذائية خلال شهر رمضان 2025</h3>
-          <p>تم توزيع سلال غذائية على الأسر المحتاجة خلال شهر رمضان المبارك لعام 2025.</p>
-          <a href="https://alkhayrong.net/" target="_blank">اقرأ المزيد</a>
-        </div>
-        <div>
-          <h3>توزيع كسوة عيد الفطر 2025</h3>
-          <p>تم توزيع كسوة العيد على الأيتام والأطفال المحتاجين بمناسبة عيد الفطر 2025.</p>
-          <a href="https://alkhayrong.net/" target="_blank">اقرأ المزيد</a>
-        </div>
-        <div>
-          <h3>تدشين قرية سكنية في توجنين</h3>
-          <p>بالتعاون مع وزارة الإسكان، تم تدشين قرية سكنية جديدة لدعم الأسر الضعيفة.</p>
-          <a href="https://alkhayrong.net/" target="_blank">اقرأ المزيد</a>
-        </div>
-        <div>
-          <h3>توزيع ألف نسخة من المصحف الشريف</h3>
-          <p>تم توزيع ألف نسخة من المصحف الشريف برواية ورش على عدد من المحاظر والمراكز الإسلامية.</p>
-          <a href="https://alkhayrong.net/" target="_blank">اقرأ المزيد</a>
-        </div>
+      <div class="news-list" id="newsList">
+        <!-- News items will be loaded dynamically -->
       </div>
       <p style="font-size:0.9em; color:#888;">المصدر: <a href="https://alkhayrong.net/" target="_blank">alkhayrong.net</a></p>
     </section>
@@ -88,8 +66,43 @@
   <footer>
     <div class="footer-content">
       <p>© 2025 جمعية الخير للتكافل الاجتماعي. جميع الحقوق محفوظة.</p>
+      <a href="admin/login.html" class="dashboard-btn">لوحة التحكم</a>
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
+  <script>
+    // Load news from localStorage
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsList = document.getElementById('newsList');
+      const storedNews = localStorage.getItem('news');
+      const news = storedNews ? JSON.parse(storedNews) : [];
+      
+      if (news.length > 0) {
+        newsList.innerHTML = news.map(item => `
+          <div class="news-item">
+            ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">` : ''}
+            <h3>${item.title}</h3>
+            <p>${item.content}</p>
+            <p class="news-date">${item.date}</p>
+            <a href="https://alkhayrong.net/" target="_blank">اقرأ المزيد</a>
+          </div>
+        `).join('');
+      } else {
+        // Default news if no stored news
+        newsList.innerHTML = `
+          <div>
+            <h3>توزيع لحوم ذبائح خلال أيام الفطر 2025</h3>
+            <p>قامت الجمعية بالتعاون مع جمعية وقف الأيتام بتوزيع لحوم أبقار على بعض محتاجي العاصمة خلال عيد الفطر 2025.</p>
+            <a href="https://alkhayrong.net/" target="_blank">اقرأ المزيد</a>
+          </div>
+          <div>
+            <h3>توزيع سلال غذائية خلال شهر رمضان 2025</h3>
+            <p>تم توزيع سلال غذائية على الأسر المحتاجة خلال شهر رمضان المبارك لعام 2025.</p>
+            <a href="https://alkhayrong.net/" target="_blank">اقرأ المزيد</a>
+          </div>
+        `;
+      }
+    });
+  </script>
 </body>
 </html> 
